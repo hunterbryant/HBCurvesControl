@@ -109,7 +109,7 @@ class HBCurvesControl: UIView {
 	}
 	
 	func sliderChanged(sender: UISlider) {
-		
+		//TODO: Write code to refresh the curves.
 	}
 }
 
