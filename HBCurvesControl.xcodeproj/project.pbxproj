@@ -14,7 +14,6 @@
 		9C5C124B1C38710900AF04F7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C5C12491C38710900AF04F7 /* LaunchScreen.storyboard */; };
 		9C5C12591C38713400AF04F7 /* HBCurvesControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5C12581C38713400AF04F7 /* HBCurvesControl.swift */; };
 		9C5C12611C388D3300AF04F7 /* HBCurvesControlCurve.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5C12601C388D3300AF04F7 /* HBCurvesControlCurve.swift */; };
-		9C5C12641C38912600AF04F7 /* HBCurveControlSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5C12631C38912600AF04F7 /* HBCurveControlSlider.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,7 +26,6 @@
 		9C5C124C1C38710900AF04F7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9C5C12581C38713400AF04F7 /* HBCurvesControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HBCurvesControl.swift; sourceTree = "<group>"; };
 		9C5C12601C388D3300AF04F7 /* HBCurvesControlCurve.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HBCurvesControlCurve.swift; sourceTree = "<group>"; };
-		9C5C12631C38912600AF04F7 /* HBCurveControlSlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HBCurveControlSlider.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,7 +66,6 @@
 				9C5C124C1C38710900AF04F7 /* Info.plist */,
 				9C5C12581C38713400AF04F7 /* HBCurvesControl.swift */,
 				9C5C12601C388D3300AF04F7 /* HBCurvesControlCurve.swift */,
-				9C5C12631C38912600AF04F7 /* HBCurveControlSlider.swift */,
 			);
 			path = HBCurvesControl;
 			sourceTree = "<group>";
@@ -145,7 +142,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9C5C12641C38912600AF04F7 /* HBCurveControlSlider.swift in Sources */,
 				9C5C12591C38713400AF04F7 /* HBCurvesControl.swift in Sources */,
 				9C5C12611C388D3300AF04F7 /* HBCurvesControlCurve.swift in Sources */,
 				9C5C12431C38710900AF04F7 /* ViewController.swift in Sources */,
@@ -215,7 +211,7 @@
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 			};
 			name = Debug;
 		};
@@ -252,6 +248,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -297,6 +294,7 @@
 				9C5C12511C38710900AF04F7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

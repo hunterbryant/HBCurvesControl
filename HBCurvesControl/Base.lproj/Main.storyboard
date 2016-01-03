@@ -17,26 +17,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="I9r-R0-MY6" customClass="HBCurvesControl" customModule="HBCurvesControl" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="20" width="240" height="128"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I9r-R0-MY6" customClass="HBCurvesControl" customModule="HBCurvesControl" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="260" width="600" height="340"/>
                                 <color key="backgroundColor" red="0.20392158630000001" green="0.2823529541" blue="0.36862745879999997" alpha="1" colorSpace="deviceRGB"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="primaryColor">
-                                        <color key="value" red="0.46666666670000001" green="0.76862745099999996" blue="0.82745098039999998" alpha="1" colorSpace="calibratedRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="secondaryColor">
-                                        <color key="value" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="bgColor">
-                                        <color key="value" red="0.20392158630000001" green="0.2823529541" blue="0.36862745879999997" alpha="1" colorSpace="deviceRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="lineThickness">
-                                        <integer key="value" value="2"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="340" id="r4w-K1-GFQ"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="I9r-R0-MY6" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="G3l-lu-vXQ"/>
+                            <constraint firstAttribute="trailing" secondItem="I9r-R0-MY6" secondAttribute="trailing" id="Zvg-8y-fMX"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="I9r-R0-MY6" secondAttribute="bottom" id="asn-UD-luM"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="curvesControl" destination="I9r-R0-MY6" id="Vnd-3x-nAM"/>
@@ -44,6 +38,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="460" y="284"/>
         </scene>
     </scenes>
 </document>
