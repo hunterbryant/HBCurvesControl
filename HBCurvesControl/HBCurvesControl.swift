@@ -16,7 +16,7 @@ class HBCurvesControl: UIView {
 	let primaryColor: UIColor = UIColor(red: 101/255, green: 241/255, blue: 224/255, alpha: 1.0)
 	let secondaryColor: UIColor = UIColor(red: 79/255, green: 111/255, blue: 142/255, alpha: 1.0)
 	let bgColor: UIColor = UIColor(red: 53/255, green: 61/255, blue: 81/255, alpha: 1.0)
-	let lineThickness: CGFloat = 2
+	let lineThickness: CGFloat = 3
 	let curvesMargin = CGFloat(30)
 	
 	var controlPoints: [CGPoint]?
@@ -102,6 +102,8 @@ class HBCurvesControl: UIView {
 		for view in views {
 			view.removeFromSuperview()
 		}
+		
+		self.controlPoints = [CGPoint(x: 0, y: 0), CGPoint(x: 0.25, y: 0.25), CGPoint(x: 0.5, y: 0.5), CGPoint(x: 0.75, y: 0.75), CGPoint(x: 1, y: 1)]
 
 	}
 	
@@ -137,12 +139,22 @@ class HBCurvesControl: UIView {
 	func sliderChanged(sender: UISlider) {
 		curve = nil
 		self.curve = HBCurvesControlCurve(delegate: self)
-		self.controlPoints = [CGPoint(x: 0, y: 0), CGPoint(x: 0.25, y: 0.25), CGPoint(x: 0.5, y: 0.5), CGPoint(x: 0.75, y: 0.75), CGPoint(x: 1, y: 1)]
+		
+		getSliderValues()
 		
 		self.setNeedsDisplay()
 	}
+	
+	func getSliderValues() {
+		controlPoints! = []
+		for index in sliderArray! {
+			let setValue = index.value
+			let currentIndex = Int(sliderArray!.indexOf(index)!)
+			let scaledIndex =  CGFloat(currentIndex)/CGFloat(sliderArray!.count-1)
+			self.controlPoints?.append(CGPoint(x: scaledIndex, y: CGFloat(setValue)))
+		}
+	}
 }
-
 
 
 
