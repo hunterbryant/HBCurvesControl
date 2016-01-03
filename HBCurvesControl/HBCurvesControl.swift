@@ -42,6 +42,52 @@ class HBCurvesControl: UIView {
 	}
 	
 	//MARK: Functions
+	
+	//MARK: Slider Setup Functions
+	func slidersWillLoad() {
+		for index in 0...4 {
+			
+			let newSlider = UISlider(frame: CGRectZero)
+			newSlider.transform = CGAffineTransformMakeRotation(CGFloat(-M_PI_2))
+			newSlider.value = (1.0 / 4) * Float(index)
+			newSlider.addTarget(self, action: "sliderChanged:", forControlEvents: .ValueChanged)
+			newSlider.continuous = false
+			newSlider.hidden = true
+			newSlider.maximumTrackTintColor = UIColor(red: 172/255, green: 177/255, blue: 191/255, alpha: 1.0) /* #acb1bf */
+			newSlider.minimumTrackTintColor = UIColor(red: 172/255, green: 177/255, blue: 191/255, alpha: 1.0) /* #acb1bf */
+			
+			self.addSubview(newSlider)
+			sliderArray!.insert(newSlider, atIndex: index)
+		}
+	}
+	
+	func slidersWillAppear() {
+		for index in sliderArray! {
+		
+			let width = self.bounds.width - curvesMargin*2
+			let xPos = (width*CGFloat((sliderArray?.indexOf(index))!)/4)+curvesMargin-15
+			let height = self.bounds.height - curvesMargin*2
+			
+			let sliderFrame = CGRect(x: xPos, y: 30, width: 30, height: height)
+			index.frame = sliderFrame
+			index.hidden = false
+			
+		}
+	}
+	
+	func slidersWillLayoutSubviews() {
+		for index in sliderArray! {
+			
+			let width = self.bounds.width - curvesMargin*2
+			let xPos = (width*CGFloat((sliderArray?.indexOf(index))!)/4)+curvesMargin-15
+			let height = self.bounds.height - curvesMargin*2
+			
+			let sliderFrame = CGRect(x: xPos, y: 30, width: 30, height: height)
+			index.frame = sliderFrame
+			index.hidden = false
+			
+		}
+	}
 
 	func setup() {
 		
@@ -50,24 +96,6 @@ class HBCurvesControl: UIView {
 		let views = self.subviews
 		for view in views {
 			view.removeFromSuperview()
-		}
-		
-		for index in 0...4 {
-			
-			let newSlider = UISlider(frame: CGRectZero)
-			newSlider.transform = CGAffineTransformMakeRotation(CGFloat(-M_PI_2))
-			newSlider.value = (1.0 / 4) * Float(index)
-			newSlider.addTarget(self, action: "sliderChanged:", forControlEvents: .ValueChanged)
-			newSlider.continuous = false
-			
-			let width = self.bounds.width - curvesMargin*2
-			let xPos = ((width*CGFloat(index))/4)+curvesMargin
-			let height = self.bounds.height - curvesMargin*2
-			
-			newSlider.frame = CGRect(x: xPos, y: 30, width: 30, height: height)
-			
-			sliderArray!.insert(newSlider, atIndex: index)
-			self.addSubview(newSlider)
 		}
 
 	}

@@ -16,7 +16,15 @@ class ViewController: UIViewController {
 		super.viewDidLoad()
 		// Do any additional setup after loading the view, typically from a nib.
 		
-		curvesControl.setup()
+		curvesControl.slidersWillLoad()
+	}
+	
+	override func viewWillAppear(animated: Bool) {
+		curvesControl.slidersWillAppear()
+	}
+	
+	override func viewWillLayoutSubviews() {
+		curvesControl.slidersWillLayoutSubviews()
 	}
 
 	override func didReceiveMemoryWarning() {
