@@ -18,10 +18,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I9r-R0-MY6" customClass="HBCurvesControl" customModule="HBCurvesControl" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="260" width="600" height="340"/>
+                                <rect key="frame" x="0.0" y="300" width="600" height="300"/>
                                 <color key="backgroundColor" red="0.20392158630000001" green="0.2823529541" blue="0.36862745879999997" alpha="1" colorSpace="deviceRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="340" id="r4w-K1-GFQ"/>
+                                    <constraint firstAttribute="height" constant="300" id="r4w-K1-GFQ"/>
                                 </constraints>
                             </view>
                         </subviews>

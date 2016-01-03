@@ -14,7 +14,7 @@ class HBCurvesControl: UIView {
 	//MARK: Properties
 	
 	let primaryColor: UIColor = UIColor(red: 101/255, green: 241/255, blue: 224/255, alpha: 1.0)
-	let secondaryColor: UIColor = UIColor(red: 172/255, green: 177/255, blue: 191/255, alpha: 1.0)
+	let secondaryColor: UIColor = UIColor(red: 79/255, green: 111/255, blue: 142/255, alpha: 1.0)
 	let bgColor: UIColor = UIColor(red: 53/255, green: 61/255, blue: 81/255, alpha: 1.0)
 	let lineThickness: CGFloat = 2
 	let curvesMargin = CGFloat(30)
@@ -50,11 +50,14 @@ class HBCurvesControl: UIView {
 			let newSlider = UISlider(frame: CGRectZero)
 			newSlider.transform = CGAffineTransformMakeRotation(CGFloat(-M_PI_2))
 			newSlider.value = (1.0 / 4) * Float(index)
+			newSlider.addTarget(self, action: "sliderChanged:", forControlEvents: .TouchDragInside)
+			newSlider.addTarget(self, action: "sliderChanged:", forControlEvents: .TouchDragOutside)
 			newSlider.addTarget(self, action: "sliderChanged:", forControlEvents: .ValueChanged)
 			newSlider.continuous = false
 			newSlider.hidden = true
-			newSlider.maximumTrackTintColor = UIColor(red: 172/255, green: 177/255, blue: 191/255, alpha: 1.0) /* #acb1bf */
-			newSlider.minimumTrackTintColor = UIColor(red: 172/255, green: 177/255, blue: 191/255, alpha: 1.0) /* #acb1bf */
+			newSlider.maximumTrackTintColor = secondaryColor
+			newSlider.minimumTrackTintColor = secondaryColor
+			newSlider.thumbTintColor = primaryColor
 			
 			self.addSubview(newSlider)
 			sliderArray!.insert(newSlider, atIndex: index)
@@ -101,8 +104,29 @@ class HBCurvesControl: UIView {
 	}
 	
 	override func drawRect(rect: CGRect) {
+		self.clearsContextBeforeDrawing = true
+
 		let context: CGContextRef = UIGraphicsGetCurrentContext()!
 		let colorSpace: CGColorSpaceRef = CGColorSpaceCreateDeviceRGB()!
+		
+		CGContextSetLineWidth(context, 2.0)
+		CGContextMoveToPoint(context, curvesMargin, curvesMargin+15)
+		CGContextAddLineToPoint(context, self.bounds.width-curvesMargin, curvesMargin+15)
+		
+		CGContextMoveToPoint(context, curvesMargin, ((self.bounds.height-2*curvesMargin)/4)+curvesMargin+7)
+		CGContextAddLineToPoint(context, self.bounds.width-curvesMargin, ((self.bounds.height-2*curvesMargin)/4)+curvesMargin+7)
+		
+		CGContextMoveToPoint(context, curvesMargin, ((self.bounds.height-2*curvesMargin)/2)+curvesMargin)
+		CGContextAddLineToPoint(context, self.bounds.width-curvesMargin, ((self.bounds.height-2*curvesMargin)/2)+curvesMargin)
+		
+		CGContextMoveToPoint(context, curvesMargin, (3*(self.bounds.height-2*curvesMargin)/4)+curvesMargin-7)
+		CGContextAddLineToPoint(context, self.bounds.width-curvesMargin, (3*(self.bounds.height-2*curvesMargin)/4)+curvesMargin-7)
+		
+		CGContextMoveToPoint(context, curvesMargin, self.bounds.height-curvesMargin-15)
+		CGContextAddLineToPoint(context, self.bounds.width-curvesMargin, self.bounds.height-curvesMargin-15)
+		
+		CGContextSetStrokeColor(context, CGColorGetComponents(secondaryColor.CGColor))
+		CGContextStrokePath(context)
 		
 		curve!.drawCurve(rect, inContext: context, withColorSpace: colorSpace)
 		
@@ -110,6 +134,11 @@ class HBCurvesControl: UIView {
 	
 	func sliderChanged(sender: UISlider) {
 		//TODO: Write code to refresh the curves.
+		curve = nil
+		self.curve = HBCurvesControlCurve(delegate: self)
+		self.controlPoints = [CGPoint(x: 0, y: 0), CGPoint(x: 0.25, y: 0.25), CGPoint(x: 0.5, y: 0.5), CGPoint(x: 0.75, y: 0.75), CGPoint(x: 1, y: 1)]
+		
+		self.setNeedsDisplay()
 	}
 }
 

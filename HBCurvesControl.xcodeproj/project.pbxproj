@@ -14,6 +14,8 @@
 		9C5C124B1C38710900AF04F7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C5C12491C38710900AF04F7 /* LaunchScreen.storyboard */; };
 		9C5C12591C38713400AF04F7 /* HBCurvesControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5C12581C38713400AF04F7 /* HBCurvesControl.swift */; };
 		9C5C12611C388D3300AF04F7 /* HBCurvesControlCurve.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5C12601C388D3300AF04F7 /* HBCurvesControlCurve.swift */; };
+		9C6A8FFE1C399AA000177957 /* CGPointExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C6A8FFB1C399AA000177957 /* CGPointExtension.m */; };
+		9C6A8FFF1C399AA000177957 /* UIBezierPath+Interpolation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C6A8FFD1C399AA000177957 /* UIBezierPath+Interpolation.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,11 @@
 		9C5C124C1C38710900AF04F7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9C5C12581C38713400AF04F7 /* HBCurvesControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HBCurvesControl.swift; sourceTree = "<group>"; };
 		9C5C12601C388D3300AF04F7 /* HBCurvesControlCurve.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HBCurvesControlCurve.swift; sourceTree = "<group>"; };
+		9C6A8FF91C399A9F00177957 /* HBCurvesControl-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HBCurvesControl-Bridging-Header.h"; sourceTree = "<group>"; };
+		9C6A8FFA1C399AA000177957 /* CGPointExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CGPointExtension.h; sourceTree = "<group>"; };
+		9C6A8FFB1C399AA000177957 /* CGPointExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CGPointExtension.m; sourceTree = "<group>"; };
+		9C6A8FFC1C399AA000177957 /* UIBezierPath+Interpolation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBezierPath+Interpolation.h"; sourceTree = "<group>"; };
+		9C6A8FFD1C399AA000177957 /* UIBezierPath+Interpolation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBezierPath+Interpolation.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,8 +73,21 @@
 				9C5C124C1C38710900AF04F7 /* Info.plist */,
 				9C5C12581C38713400AF04F7 /* HBCurvesControl.swift */,
 				9C5C12601C388D3300AF04F7 /* HBCurvesControlCurve.swift */,
+				9C6A8FF91C399A9F00177957 /* HBCurvesControl-Bridging-Header.h */,
+				9C6A8FF41C39996A00177957 /* Points Interpolation */,
 			);
 			path = HBCurvesControl;
+			sourceTree = "<group>";
+		};
+		9C6A8FF41C39996A00177957 /* Points Interpolation */ = {
+			isa = PBXGroup;
+			children = (
+				9C6A8FFA1C399AA000177957 /* CGPointExtension.h */,
+				9C6A8FFB1C399AA000177957 /* CGPointExtension.m */,
+				9C6A8FFC1C399AA000177957 /* UIBezierPath+Interpolation.h */,
+				9C6A8FFD1C399AA000177957 /* UIBezierPath+Interpolation.m */,
+			);
+			name = "Points Interpolation";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -143,6 +163,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				9C5C12591C38713400AF04F7 /* HBCurvesControl.swift in Sources */,
+				9C6A8FFE1C399AA000177957 /* CGPointExtension.m in Sources */,
+				9C6A8FFF1C399AA000177957 /* UIBezierPath+Interpolation.m in Sources */,
 				9C5C12611C388D3300AF04F7 /* HBCurvesControlCurve.swift in Sources */,
 				9C5C12431C38710900AF04F7 /* ViewController.swift in Sources */,
 				9C5C12411C38710900AF04F7 /* AppDelegate.swift in Sources */,
@@ -257,10 +279,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = HBCurvesControl/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = io.hunterbryant.HBCurvesControl;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "HBCurvesControl/HBCurvesControl-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -268,10 +293,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = HBCurvesControl/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = io.hunterbryant.HBCurvesControl;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "HBCurvesControl/HBCurvesControl-Bridging-Header.h";
 			};
 			name = Release;
 		};
