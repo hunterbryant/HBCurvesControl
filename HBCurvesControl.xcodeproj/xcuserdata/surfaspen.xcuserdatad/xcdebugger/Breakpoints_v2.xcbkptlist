@@ -10,12 +10,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HBCurvesControl/HBCurvesControlCurve.swift"
-            timestampString = "473473662.102361"
+            timestampString = "473474801.934822"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "33"
-            endingLineNumber = "33"
-            landmarkName = "drawCurve()"
+            startingLineNumber = "26"
+            endingLineNumber = "26"
+            landmarkName = "init(delegate:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

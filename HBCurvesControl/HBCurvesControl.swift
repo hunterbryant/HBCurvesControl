@@ -1,3 +1,4 @@
+
 //
 //  HBCurvesControl.swift
 //  HBCurvesControl
@@ -15,7 +16,7 @@ class HBCurvesControl: UIView {
 	@IBInspectable var primaryColor: UIColor?
 	@IBInspectable var secondaryColor: UIColor?
 	@IBInspectable var bgColor: UIColor?
-	@IBInspectable var lineThickness: Int = 2
+	@IBInspectable var lineThickness: CGFloat = 2
 	
 	var controlPoints: [CGPoint]?
 	var curve: HBCurvesControlCurve?
@@ -24,11 +25,16 @@ class HBCurvesControl: UIView {
 	
 	required init?(coder aDecoder: NSCoder) {
 		super.init(coder: aDecoder)
+		initialize()
 	}
 	
 	override init(frame: CGRect) {
 		super.init(frame: frame)
-
+		initialize()
+	}
+	
+	func initialize() {
+		self.curve = HBCurvesControlCurve(delegate: self)
 		self.controlPoints = [CGPoint(x: 0, y: 0), CGPoint(x: 0.25, y: 0.25), CGPoint(x: 0.5, y: 0.5), CGPoint(x: 0.75, y: 0.75), CGPoint(x: 1, y: 1)]
 	}
 	
@@ -43,10 +49,6 @@ class HBCurvesControl: UIView {
 		
 		//let width = self.bounds.width
 		//let height = self.bounds.height
-		
-		//Initialize the curve
-		curve = HBCurvesControlCurve()
-		curve!.delegate = self
 		
 		curve!.drawCurve()
 		
