@@ -5,4 +5,6 @@ HBCurvesControl is a UI element designed to loosely imitate the curves adjustmen
 
 <img src="http://i.imgur.com/mPF5ha4.gif" width="187" height="333"/>
 
+The control isn't as slow/glitchy as in the gif.  The gif itself is gittery.
+
 The repo is under development (which should be obvious) and nowhere near done.  
