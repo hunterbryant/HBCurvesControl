@@ -47,12 +47,15 @@ class HBCurvesControl: UIView {
 	func slidersWillLoad() {
 		for index in 0...4 {
 			
+			//TODO: Transforming the slider 90 degrees causes some tracking issues with the slider.  The thumb itself tracks slower than your finger's movement.  This causes a small gittery effect when some of the sliders are first touched.
+			
 			let newSlider = UISlider(frame: CGRectZero)
 			newSlider.transform = CGAffineTransformMakeRotation(CGFloat(-M_PI_2))
 			newSlider.value = (1.0 / 4) * Float(index)
 			newSlider.addTarget(self, action: "sliderChanged:", forControlEvents: .TouchDragInside)
 			newSlider.addTarget(self, action: "sliderChanged:", forControlEvents: .TouchDragOutside)
 			newSlider.addTarget(self, action: "sliderChanged:", forControlEvents: .ValueChanged)
+			newSlider.addTarget(self, action: "sliderChanged:", forControlEvents: .TouchDown)
 			newSlider.continuous = false
 			newSlider.hidden = true
 			newSlider.maximumTrackTintColor = secondaryColor
@@ -94,7 +97,6 @@ class HBCurvesControl: UIView {
 
 	func setup() {
 		
-		//TODO: Fix Slider Width Problem
 		// Remove all subviews
 		let views = self.subviews
 		for view in views {
@@ -133,7 +135,6 @@ class HBCurvesControl: UIView {
 	}
 	
 	func sliderChanged(sender: UISlider) {
-		//TODO: Write code to refresh the curves.
 		curve = nil
 		self.curve = HBCurvesControlCurve(delegate: self)
 		self.controlPoints = [CGPoint(x: 0, y: 0), CGPoint(x: 0.25, y: 0.25), CGPoint(x: 0.5, y: 0.5), CGPoint(x: 0.75, y: 0.75), CGPoint(x: 1, y: 1)]
