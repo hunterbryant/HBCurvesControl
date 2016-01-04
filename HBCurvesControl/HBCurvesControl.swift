@@ -16,7 +16,7 @@ class HBCurvesControl: UIView {
 	let primaryColor: UIColor = UIColor(red: 101/255, green: 241/255, blue: 224/255, alpha: 1.0)
 	let secondaryColor: UIColor = UIColor(red: 79/255, green: 111/255, blue: 142/255, alpha: 1.0)
 	let bgColor: UIColor = UIColor(red: 53/255, green: 61/255, blue: 81/255, alpha: 1.0)
-	let lineThickness: CGFloat = 3
+	let lineThickness: CGFloat = 1
 	let curvesMargin = CGFloat(30)
 	
 	var controlPoints: [CGPoint]?
@@ -60,7 +60,7 @@ class HBCurvesControl: UIView {
 			newSlider.hidden = true
 			newSlider.maximumTrackTintColor = secondaryColor
 			newSlider.minimumTrackTintColor = secondaryColor
-			newSlider.thumbTintColor = primaryColor
+			//newSlider.thumbTintColor = primaryColor
 			
 			self.addSubview(newSlider)
 			sliderArray!.insert(newSlider, atIndex: index)
@@ -75,6 +75,7 @@ class HBCurvesControl: UIView {
 			let height = self.bounds.height - curvesMargin*2
 			
 			let sliderFrame = CGRect(x: xPos, y: 30, width: 30, height: height)
+			
 			index.frame = sliderFrame
 			index.hidden = false
 			
@@ -89,6 +90,7 @@ class HBCurvesControl: UIView {
 			let height = self.bounds.height - curvesMargin*2
 			
 			let sliderFrame = CGRect(x: xPos, y: 30, width: 30, height: height)
+			
 			index.frame = sliderFrame
 			index.hidden = false
 			
@@ -96,7 +98,7 @@ class HBCurvesControl: UIView {
 	}
 
 	func setup() {
-		
+
 		// Remove all subviews
 		let views = self.subviews
 		for view in views {
