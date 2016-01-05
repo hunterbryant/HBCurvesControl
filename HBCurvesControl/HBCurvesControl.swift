@@ -16,7 +16,7 @@ class HBCurvesControl: UIView {
 	let primaryColor: UIColor = UIColor(red: 101/255, green: 241/255, blue: 224/255, alpha: 1.0)
 	let secondaryColor: UIColor = UIColor(red: 79/255, green: 111/255, blue: 142/255, alpha: 1.0)
 	let bgColor: UIColor = UIColor(red: 53/255, green: 61/255, blue: 81/255, alpha: 1.0)
-	let lineThickness: CGFloat = 1
+	let lineThickness: CGFloat = 2
 	let curvesMargin = CGFloat(30)
 	
 	var controlPoints: [CGPoint]?
