@@ -90,6 +90,8 @@ class HBCurvesControl: UIView {
 			let height = self.bounds.height - curvesMargin*2
 			
 			let sliderFrame = CGRect(x: xPos, y: 30, width: 30, height: height)
+			index.setMaximumTrackImage(nil, forState: .Normal)
+			index.minimumTrackTintColor = UIColor.clearColor()
 			
 			index.frame = sliderFrame
 			index.hidden = false
@@ -115,10 +117,11 @@ class HBCurvesControl: UIView {
 		let context: CGContextRef = UIGraphicsGetCurrentContext()!
 		let colorSpace: CGColorSpaceRef = CGColorSpaceCreateDeviceRGB()!
 		
-		CGContextSetLineWidth(context, 2.0)
+		CGContextSetLineWidth(context, 1.0)
 		CGContextMoveToPoint(context, curvesMargin, curvesMargin+15)
 		CGContextAddLineToPoint(context, self.bounds.width-curvesMargin, curvesMargin+15)
 		
+		//Horizontal Lines
 		CGContextMoveToPoint(context, curvesMargin, ((self.bounds.height-2*curvesMargin)/4)+curvesMargin+7)
 		CGContextAddLineToPoint(context, self.bounds.width-curvesMargin, ((self.bounds.height-2*curvesMargin)/4)+curvesMargin+7)
 		
@@ -130,6 +133,19 @@ class HBCurvesControl: UIView {
 		
 		CGContextMoveToPoint(context, curvesMargin, self.bounds.height-curvesMargin-15)
 		CGContextAddLineToPoint(context, self.bounds.width-curvesMargin, self.bounds.height-curvesMargin-15)
+		
+		//Vertical Lines
+		for index in sliderArray! {
+			
+			let width = self.bounds.width - curvesMargin*2
+			let xPos = (width*CGFloat((sliderArray?.indexOf(index))!)/4)+curvesMargin-15
+			let height = self.bounds.height - curvesMargin*2
+			
+			CGContextMoveToPoint(context, xPos+15, 45)
+			CGContextAddLineToPoint(context, xPos+15, height+curvesMargin-15)
+			
+		}
+
 		
 		CGContextSetStrokeColor(context, CGColorGetComponents(secondaryColor.CGColor))
 		CGContextStrokePath(context)

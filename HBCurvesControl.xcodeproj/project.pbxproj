@@ -16,6 +16,7 @@
 		9C5C12611C388D3300AF04F7 /* HBCurvesControlCurve.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5C12601C388D3300AF04F7 /* HBCurvesControlCurve.swift */; };
 		9C6A8FFE1C399AA000177957 /* CGPointExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C6A8FFB1C399AA000177957 /* CGPointExtension.m */; };
 		9C6A8FFF1C399AA000177957 /* UIBezierPath+Interpolation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C6A8FFD1C399AA000177957 /* UIBezierPath+Interpolation.m */; };
+		9CD940931C3B51500000A5ED /* slider-track-fill.png in Resources */ = {isa = PBXBuildFile; fileRef = 9CD940921C3B51500000A5ED /* slider-track-fill.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,7 @@
 		9C6A8FFB1C399AA000177957 /* CGPointExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CGPointExtension.m; sourceTree = "<group>"; };
 		9C6A8FFC1C399AA000177957 /* UIBezierPath+Interpolation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBezierPath+Interpolation.h"; sourceTree = "<group>"; };
 		9C6A8FFD1C399AA000177957 /* UIBezierPath+Interpolation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBezierPath+Interpolation.m"; sourceTree = "<group>"; };
+		9CD940921C3B51500000A5ED /* slider-track-fill.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "slider-track-fill.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +67,7 @@
 		9C5C123F1C38710900AF04F7 /* HBCurvesControl */ = {
 			isa = PBXGroup;
 			children = (
+				9CD940951C3B51530000A5ED /* Resources */,
 				9C5C12401C38710900AF04F7 /* AppDelegate.swift */,
 				9C5C12421C38710900AF04F7 /* ViewController.swift */,
 				9C5C12441C38710900AF04F7 /* Main.storyboard */,
@@ -88,6 +91,14 @@
 				9C6A8FFD1C399AA000177957 /* UIBezierPath+Interpolation.m */,
 			);
 			name = "Points Interpolation";
+			sourceTree = "<group>";
+		};
+		9CD940951C3B51530000A5ED /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				9CD940921C3B51500000A5ED /* slider-track-fill.png */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -150,6 +161,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9C5C124B1C38710900AF04F7 /* LaunchScreen.storyboard in Resources */,
+				9CD940931C3B51500000A5ED /* slider-track-fill.png in Resources */,
 				9C5C12481C38710900AF04F7 /* Assets.xcassets in Resources */,
 				9C5C12461C38710900AF04F7 /* Main.storyboard in Resources */,
 			);
