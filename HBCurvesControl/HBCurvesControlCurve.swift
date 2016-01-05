@@ -81,6 +81,7 @@ class HBCurvesControlCurve: UIBezierPath {
 		let newPath: UIBezierPath = UIBezierPath.interpolateCGPointsWithHermite(pointsArray, closed: false)
 		
 		self.CGPath = newPath.CGPath
+		self.lineCapStyle = .Round
 		
 		self.lineColor!.setStroke()
 		self.stroke()
