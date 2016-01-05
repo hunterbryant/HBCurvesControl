@@ -67,17 +67,13 @@
 		9C5C123F1C38710900AF04F7 /* HBCurvesControl */ = {
 			isa = PBXGroup;
 			children = (
-				9CD940951C3B51530000A5ED /* Resources */,
 				9C5C12401C38710900AF04F7 /* AppDelegate.swift */,
 				9C5C12421C38710900AF04F7 /* ViewController.swift */,
 				9C5C12441C38710900AF04F7 /* Main.storyboard */,
 				9C5C12471C38710900AF04F7 /* Assets.xcassets */,
 				9C5C12491C38710900AF04F7 /* LaunchScreen.storyboard */,
 				9C5C124C1C38710900AF04F7 /* Info.plist */,
-				9C5C12581C38713400AF04F7 /* HBCurvesControl.swift */,
-				9C5C12601C388D3300AF04F7 /* HBCurvesControlCurve.swift */,
-				9C6A8FF91C399A9F00177957 /* HBCurvesControl-Bridging-Header.h */,
-				9C6A8FF41C39996A00177957 /* Points Interpolation */,
+				9CD940CD1C3B66D10000A5ED /* HBCurvesControl */,
 			);
 			path = HBCurvesControl;
 			sourceTree = "<group>";
@@ -99,6 +95,18 @@
 				9CD9409D1C3B5ECB0000A5ED /* slider-cap@3x.png */,
 			);
 			name = Resources;
+			sourceTree = "<group>";
+		};
+		9CD940CD1C3B66D10000A5ED /* HBCurvesControl */ = {
+			isa = PBXGroup;
+			children = (
+				9C5C12581C38713400AF04F7 /* HBCurvesControl.swift */,
+				9C5C12601C388D3300AF04F7 /* HBCurvesControlCurve.swift */,
+				9C6A8FF91C399A9F00177957 /* HBCurvesControl-Bridging-Header.h */,
+				9CD940951C3B51530000A5ED /* Resources */,
+				9C6A8FF41C39996A00177957 /* Points Interpolation */,
+			);
+			name = HBCurvesControl;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
