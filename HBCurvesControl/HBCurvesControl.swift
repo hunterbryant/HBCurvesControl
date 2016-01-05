@@ -14,8 +14,9 @@ class HBCurvesControl: UIView {
 	//MARK: Properties
 	
 	let primaryColor: UIColor = UIColor(red: 101/255, green: 241/255, blue: 224/255, alpha: 1.0)
-	let secondaryColor: UIColor = UIColor(red: 79/255, green: 111/255, blue: 142/255, alpha: 1.0)
-	let bgColor: UIColor = UIColor(red: 53/255, green: 61/255, blue: 81/255, alpha: 1.0)
+	let secondaryColor: UIColor = UIColor(red: 113/255, green: 121/255, blue: 140/255, alpha: 1.0) /* #71798c */
+	let bgColor: UIColor = UIColor(red: 34/255, green: 38/255, blue: 51/255, alpha: 1.0) /* #222633 */
+
 	let lineThickness: CGFloat = 2
 	let curvesMargin = CGFloat(30)
 	
@@ -72,9 +73,9 @@ class HBCurvesControl: UIView {
 		
 			let width = self.bounds.width - curvesMargin*2
 			let xPos = (width*CGFloat((sliderArray?.indexOf(index))!)/4)+curvesMargin-15
-			let height = self.bounds.height - curvesMargin*2
+			let height = self.bounds.height - curvesMargin*2 + 30
 			
-			let sliderFrame = CGRect(x: xPos, y: 30, width: 30, height: height)
+			let sliderFrame = CGRect(x: xPos, y: 15, width: 30, height: height)
 			
 			index.frame = sliderFrame
 			index.hidden = false
@@ -87,11 +88,13 @@ class HBCurvesControl: UIView {
 			
 			let width = self.bounds.width - curvesMargin*2
 			let xPos = (width*CGFloat((sliderArray?.indexOf(index))!)/4)+curvesMargin-15
-			let height = self.bounds.height - curvesMargin*2
+			let height = self.bounds.height - curvesMargin*2 + 30
 			
-			let sliderFrame = CGRect(x: xPos, y: 30, width: 30, height: height)
+			let sliderFrame = CGRect(x: xPos, y: 15, width: 30, height: height)
 			index.setMaximumTrackImage(nil, forState: .Normal)
 			index.minimumTrackTintColor = UIColor.clearColor()
+			
+			index.setThumbImage(UIImage(named: "slider-cap.png"), forState: .Normal)
 			
 			index.frame = sliderFrame
 			index.hidden = false
@@ -117,22 +120,23 @@ class HBCurvesControl: UIView {
 		let context: CGContextRef = UIGraphicsGetCurrentContext()!
 		let colorSpace: CGColorSpaceRef = CGColorSpaceCreateDeviceRGB()!
 		
-		CGContextSetLineWidth(context, 1.0)
-		CGContextMoveToPoint(context, curvesMargin, curvesMargin+15)
-		CGContextAddLineToPoint(context, self.bounds.width-curvesMargin, curvesMargin+15)
 		
 		//Horizontal Lines
-		CGContextMoveToPoint(context, curvesMargin, ((self.bounds.height-2*curvesMargin)/4)+curvesMargin+7)
-		CGContextAddLineToPoint(context, self.bounds.width-curvesMargin, ((self.bounds.height-2*curvesMargin)/4)+curvesMargin+7)
+		CGContextSetLineWidth(context, 1.0)
+		CGContextMoveToPoint(context, curvesMargin, curvesMargin)
+		CGContextAddLineToPoint(context, self.bounds.width-curvesMargin, curvesMargin)
+		
+		CGContextMoveToPoint(context, curvesMargin, ((self.bounds.height-2*curvesMargin)/4)+curvesMargin)
+		CGContextAddLineToPoint(context, self.bounds.width-curvesMargin, ((self.bounds.height-2*curvesMargin)/4)+curvesMargin)
 		
 		CGContextMoveToPoint(context, curvesMargin, ((self.bounds.height-2*curvesMargin)/2)+curvesMargin)
 		CGContextAddLineToPoint(context, self.bounds.width-curvesMargin, ((self.bounds.height-2*curvesMargin)/2)+curvesMargin)
 		
-		CGContextMoveToPoint(context, curvesMargin, (3*(self.bounds.height-2*curvesMargin)/4)+curvesMargin-7)
-		CGContextAddLineToPoint(context, self.bounds.width-curvesMargin, (3*(self.bounds.height-2*curvesMargin)/4)+curvesMargin-7)
+		CGContextMoveToPoint(context, curvesMargin, (3*(self.bounds.height-2*curvesMargin)/4)+curvesMargin)
+		CGContextAddLineToPoint(context, self.bounds.width-curvesMargin, (3*(self.bounds.height-2*curvesMargin)/4)+curvesMargin)
 		
-		CGContextMoveToPoint(context, curvesMargin, self.bounds.height-curvesMargin-15)
-		CGContextAddLineToPoint(context, self.bounds.width-curvesMargin, self.bounds.height-curvesMargin-15)
+		CGContextMoveToPoint(context, curvesMargin, self.bounds.height-curvesMargin)
+		CGContextAddLineToPoint(context, self.bounds.width-curvesMargin, self.bounds.height-curvesMargin)
 		
 		//Vertical Lines
 		for index in sliderArray! {
@@ -141,8 +145,8 @@ class HBCurvesControl: UIView {
 			let xPos = (width*CGFloat((sliderArray?.indexOf(index))!)/4)+curvesMargin-15
 			let height = self.bounds.height - curvesMargin*2
 			
-			CGContextMoveToPoint(context, xPos+15, 45)
-			CGContextAddLineToPoint(context, xPos+15, height+curvesMargin-15)
+			CGContextMoveToPoint(context, xPos+15, 30)
+			CGContextAddLineToPoint(context, xPos+15, height+curvesMargin)
 			
 		}
 

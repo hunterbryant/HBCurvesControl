@@ -16,7 +16,7 @@
 		9C5C12611C388D3300AF04F7 /* HBCurvesControlCurve.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5C12601C388D3300AF04F7 /* HBCurvesControlCurve.swift */; };
 		9C6A8FFE1C399AA000177957 /* CGPointExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C6A8FFB1C399AA000177957 /* CGPointExtension.m */; };
 		9C6A8FFF1C399AA000177957 /* UIBezierPath+Interpolation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C6A8FFD1C399AA000177957 /* UIBezierPath+Interpolation.m */; };
-		9CD940931C3B51500000A5ED /* slider-track-fill.png in Resources */ = {isa = PBXBuildFile; fileRef = 9CD940921C3B51500000A5ED /* slider-track-fill.png */; };
+		9CD9409E1C3B5ECB0000A5ED /* slider-cap@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9CD9409D1C3B5ECB0000A5ED /* slider-cap@3x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,7 +34,7 @@
 		9C6A8FFB1C399AA000177957 /* CGPointExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CGPointExtension.m; sourceTree = "<group>"; };
 		9C6A8FFC1C399AA000177957 /* UIBezierPath+Interpolation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBezierPath+Interpolation.h"; sourceTree = "<group>"; };
 		9C6A8FFD1C399AA000177957 /* UIBezierPath+Interpolation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBezierPath+Interpolation.m"; sourceTree = "<group>"; };
-		9CD940921C3B51500000A5ED /* slider-track-fill.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "slider-track-fill.png"; sourceTree = "<group>"; };
+		9CD9409D1C3B5ECB0000A5ED /* slider-cap@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "slider-cap@3x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,7 +96,7 @@
 		9CD940951C3B51530000A5ED /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				9CD940921C3B51500000A5ED /* slider-track-fill.png */,
+				9CD9409D1C3B5ECB0000A5ED /* slider-cap@3x.png */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -161,9 +161,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				9C5C124B1C38710900AF04F7 /* LaunchScreen.storyboard in Resources */,
-				9CD940931C3B51500000A5ED /* slider-track-fill.png in Resources */,
 				9C5C12481C38710900AF04F7 /* Assets.xcassets in Resources */,
 				9C5C12461C38710900AF04F7 /* Main.storyboard in Resources */,
+				9CD9409E1C3B5ECB0000A5ED /* slider-cap@3x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

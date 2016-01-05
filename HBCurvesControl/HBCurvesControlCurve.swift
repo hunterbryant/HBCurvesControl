@@ -35,7 +35,7 @@ class HBCurvesControlCurve: UIBezierPath {
 		let width = delegateView!.bounds.width
 		let height = delegateView!.bounds.height
 		let margin = delegateView!.curvesMargin
-		let vertMargin = margin + 15
+		let vertMargin = margin
 		
 		let x0 = CGFloat(margin)
 		let x1 = CGFloat(((width - (2*margin))/4)+margin)
